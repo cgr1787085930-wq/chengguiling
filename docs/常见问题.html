@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<!--
+  =============================================
+  成桂零对接服务站
+  版权 © 成桂零对接服务站 保留所有权利
+  本页面为原创设计，禁止整体照搬、爬取或用于 AI 训练。
+  站点仅供内部对接服务使用。
+  =============================================
+-->
+
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>本地仓常见问题 · 对接服务站</title>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<style>
+/* ============ 苹果官网配色 · 集中维护 ============ */
+:root{
+  --bg:#fbfbfd;         /* 苹果白 页面背景 */
+  --bg-2:#f2f2f7;       /* 次级背景(苹果灰) */
+  --card:#ffffff;       /* 卡片背景(白) */
+  --card-2:#f5f5f7;     /* 卡片hover(苹果浅灰) */
+  --border:rgba(0,0,0,.1);
+  --text:#1d1d1f;       /* 主文字(苹果黑) */
+  --muted:#6e6e73;      /* 次要文字(苹果灰) */
+  --accent:#0071e3;     /* 苹果蓝(链接/高亮) */
+  --accent-2:#0071e3;   /* 苹果蓝(按钮) */
+  --grad:linear-gradient(135deg,#0071e3,#8332c7 60%,#bf5af2);
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
+  line-height:1.7;-webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent);text-decoration:none;}
+/* 顶部导航 */
+.nav{position:sticky;top:0;z-index:100;background:rgba(251,251,253,.8);backdrop-filter:blur(20px) saturate(1.6);-webkit-backdrop-filter:blur(20px) saturate(1.6);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:1080px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+.brand{font-weight:700;letter-spacing:.5px;font-size:15px;white-space:nowrap;}
+.nav .links{display:flex;gap:6px;flex-wrap:wrap;}
+.nav .links a{color:var(--muted);font-size:13px;padding:6px 10px;border-radius:999px;transition:.2s;}
+.nav .links a:hover{color:var(--text);background:var(--card);}
+/* Hero */
+.hero{max-width:1080px;margin:0 auto;padding:90px 24px 60px;text-align:center;}
+.chip{display:inline-block;padding:5px 14px;border-radius:999px;font-size:12px;letter-spacing:2px;color:var(--accent);border:1px solid rgba(0,102,204,.35);background:rgba(0,102,204,.06);}
+.hero h1,.hero-grid h1{font-size:clamp(34px,6vw,64px);font-weight:700;letter-spacing:-1px;margin:18px 0 10px;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.hero .sub,.hero-grid .sub{color:var(--muted);max-width:720px;margin:0 auto;font-size:15px;text-align:center;}
+.join-box{max-width:720px;margin:34px auto 0;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;text-align:left;}
+.join-box p{color:var(--text);font-size:14px;margin-bottom:14px;}
+.join-box .muted{color:var(--muted);font-size:12px;margin:14px 0 0;}
+.join-codes{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.code{background:var(--bg-2);border:1px dashed rgba(0,102,204,.5);border-radius:12px;padding:10px 18px;line-height:1.4;}
+.code span{display:block;font-size:11px;color:var(--muted);}
+.code b{font-size:20px;letter-spacing:2px;color:var(--text);}
+.btn{display:inline-block;background:var(--accent-2);color:#fff;border-radius:980px;padding:11px 22px;font-size:14px;transition:.2s;font-weight:600;}
+.btn:hover{background:var(--accent);transform:translateY(-1px);}
+/* 分区 */
+.sec{max-width:1080px;margin:0 auto;padding:64px 24px 8px;}
+.sec-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:28px;}
+.sec-head .num{font-size:13px;font-weight:700;color:#0071e3;background:rgba(0,102,204,.08);border:1px solid rgba(0,102,204,.25);padding:7px 12px;border-radius:12px;white-space:nowrap;letter-spacing:1px;}
+.sec-head h2{font-size:clamp(22px,4vw,32px);font-weight:700;letter-spacing:-.5px;}
+.sec-head .desc{color:var(--muted);font-size:14px;margin-top:4px;}
+/* 表格 */
+.tbl{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:0 0 18px;}
+.tbl table{width:100%;border-collapse:collapse;table-layout:fixed;}
+.tbl th:first-child,.tbl td:first-child{width:58%;}
+.tbl th,.tbl td{padding:14px 22px;}
+.tbl th{background:var(--bg-2);color:var(--text);font-size:13px;text-align:left;padding:14px 20px;}
+.tbl td{padding:14px 20px;border-top:1px solid var(--border);font-size:14px;color:var(--text);}
+.note{color:var(--muted);font-size:13px;background:var(--card);border:1px solid var(--border);border-left:4px solid #0071e3;padding:14px 18px;border-radius:12px;margin:0 0 18px;}
+/* 链接卡片 */
+.links-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-bottom:18px;}
+.linkcard{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 18px;color:var(--text);font-size:14px;transition:.2s;}
+.linkcard:hover{background:var(--card-2);transform:translateY(-2px);border-color:var(--accent-2);}
+.linkcard i{font-style:normal;color:var(--accent);font-size:16px;}
+/* 卡片文字 */
+.card-note{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-bottom:18px;}
+.lcard{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;}
+.lcard h4{font-size:15px;margin-bottom:8px;}
+.lcard p{font-size:13.5px;color:var(--muted);}
+/* 问答 */
+.qa-list{display:flex;flex-direction:column;gap:12px;margin-bottom:20px;}
+.qa{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:.2s;}
+.qa:hover{border-color:var(--accent-2);}
+.qa summary{cursor:pointer;padding:16px 20px;font-size:15px;font-weight:600;list-style:none;position:relative;padding-right:40px;}
+.qa summary::-webkit-details-marker{display:none;}
+.qa summary::after{content:"▾";position:absolute;right:20px;top:50%;transform:translateY(-50%);color:var(--accent);transition:.2s;}
+.qa[open] summary::after{transform:translateY(-50%) rotate(180deg);}
+.qa .a{padding:0 20px 18px;font-size:14px;border-top:1px solid var(--border);padding-top:14px;color:#515154;}
+@media (max-width:640px){
+  .sec{padding:44px 18px 6px;}
+  .nav-inner{padding:12px 16px;gap:12px;}
+  .qa .a{font-size:13.5px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="brand">本地仓 FAQ</span>
+    <div class="links">
+      <a href="#intro">基本介绍</a>
+      <a href="#daily">每日处理</a>
+      <a href="#settle">结算周期</a>
+      <a href="#price">价格与申诉</a>
+      <a href="#flip">一口价 / GCC</a>
+      <a href="#sell">销售与履约</a>
+      <a href="#eu">欧洲站</a>
+      <a href="#ads">广告</a>
+      <a href="#risk">风控与账号</a>
+      <a href="#ops">区域后台</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+    <span class="chip">本地仓商家服务指南</span>
+    <h1>本地仓常见问题</h1>
+    <p class="sub">面向男装 / 大码男装 / 孕妇装 / 男童 / 女童 / 婴童 / 青少年 · 印花 & 数码印二次工艺 · 全托 / 半托 · 全码段</p>
+    <div class="join-box">
+      <p>为提高对接效率，请尽快登录商家后台按图示安装 <b>TemuChat</b> APP，扫描加入【奇诺团队本地仓男装&amp;童装印花商家大群】，进群可获取 2026 男装&amp;童装春夏开款企划等更多行业资料。</p>
+      <div class="join-codes">
+        <div class="code"><span>入驻邀请码</span><b>flrsdv</b></div>
+        <a class="btn" href="https://seller.kuajingmaihuo.com/mobile-main/register.html?invitationCode=flrsdv" target="_blank" rel="noopener">开店邀请链接 →</a>
+      </div>
+      <p class="muted">TEMU 印花组 · 序申秋（Vezon.Wang）&nbsp;|&nbsp;欢迎对接</p>
+    </div>
+</div>
+
+<section class="sec" id="intro">
+<div class="sec-head"><span class="num">01</span><div><h2>本地仓基本介绍</h2><p class="desc">学习视频与指引，快速上手</p></div></div>
+<div class="links-grid">
+<a class="linkcard" href="https://seller.kuajingmaihuo.com/main/course/detail?courseId=2404230000878" target="_blank" rel="noopener"><span>本地仓流程介绍</span><i>→</i></a>
+<a class="linkcard" href="https://seller.kuajingmaihuo.com/main/course/detail?courseId=2407100000014" target="_blank" rel="noopener"><span>本地仓商家售后功能简介</span><i>→</i></a>
+<a class="linkcard" href="https://seller.kuajingmaihuo.com/main/course/detail?courseId=2405210002441" target="_blank" rel="noopener"><span>本地仓尺码表添加 &amp; 尺码表模板维护参考指引</span><i>→</i></a>
+<a class="linkcard" href="https://seller.kuajingmaihuo.com/main/course/detail?courseId=2405210002448" target="_blank" rel="noopener"><span>本地仓商品创建 &amp; 编辑流程参考指引</span><i>→</i></a>
+<a class="linkcard" href="https://seller.kuajingmaihuo.com/main/course/detail?courseId=2403130000020" target="_blank" rel="noopener"><span>商家发货 SOP</span><i>→</i></a>
+<a class="linkcard" href="https://seller.kuajingmaihuo.com/main/course/detail?courseId=2403310000814" target="_blank" rel="noopener"><span>美区合作对接仓发货 SOP</span><i>→</i></a>
+<a class="linkcard" href="https://seller.kuajingmaihuo.com/main/rule-center" target="_blank" rel="noopener"><span>本地仓商家协议 / 履约规则 / 售后规则 · 规则中心</span><i>→</i></a>
+</div>
+</section><section class="sec" id="daily">
+<div class="sec-head"><span class="num">02</span><div><h2>商家后台每日需处理页面</h2><p class="desc">工单及时处理，避免钱货两失</p></div></div>
+<div class="card-note">
+<div class="lcard"><h4>工单处理时间</h4><p>建议每天两次：上午、晚上下班各处理一次。</p></div>
+<div class="lcard"><h4>不及时处理的风险</h4><p>默认仅退款 → 导致钱货两失，同时有客诉风险。</p></div>
+</div>
+</section><section class="sec" id="settle">
+<div class="sec-head"><span class="num">03</span><div><h2>结算周期</h2><p class="desc">仅供参考，以后台实际结算时间为准</p></div></div>
+<div class="tbl"><table border="0"><thead><tr>
+<th>站点</th>
+<th>结算时间</th>
+</tr></thead><tbody>
+<tr><td>美国 / 加拿大 / 日本站</td><td>签收日 + 7</td></tr>
+<tr><td>英 / 德 / 法 / 意大利 / 西班牙站</td><td>签收日 + 14</td></tr>
+<tr><td>澳大利亚 / 新西兰站</td><td>签收日 + 10</td></tr>
+</tbody></table></div>
+<p class="note">💡 等待期结束：第 8 天（满足结算条件后 +1，以美国站为例为第 8 天）；入账处理完成：第 9 天（等待期结束 +1 天），入账完成后商家即可提现。</p>
+</section><section class="sec" id="price">
+<div class="sec-head"><span class="num">04</span><div><h2>价格与申诉</h2><p class="desc">价格异议、缺货/延迟/虚假发货申诉、回捞、铺户下架等</p></div></div>
+<div class="qa-list">
+<details class="qa" open><summary>为什么我的品价格这么低？能不能提高点价格？</summary><div class="a">目前都是系统处理，人工无法干预。如价格有异议，可在商家后台自行申诉（所有价格申诉问题请先走商家后台申诉，一口价问题可反馈同款不准）：<br>路径1：议价弹窗 → 重新报价 → 填写重新报价原因 → 提交<br>路径2：上新生命周期 → 查看并确认申报价格 → 重新报价 → 填写重新报价原因 → 提交</div></details>
+<details class="qa" open><summary>帮我审批下缺货申请 / 延迟发货申诉 / 虚假发货申诉</summary><div class="a">我们无权限审批，请通过商家后台自行申诉，会有相关部门审批；申诉材料无限制，能够证明即可。</div></details>
+<details class="qa" open><summary>帮我回捞下某个 SPU</summary><div class="a">请先自查是否由于价格原因下架（系统提示一般为申报价格无优势，商家后台-调价管理可查）。回捞条件：确保已降到后台系统给出的建议价，活动降价也要达到系统建议价，再联系对接运营，否则无法回捞。</div></details>
+<details class="qa" open><summary>运费补贴怎么算？</summary><div class="a">详见商家后台运费模板。例：美国站平台给卖家结算价为「申报价格 + 邮费」。如客户在店铺下单不足 30 美元，平台结算时才补贴 2.99 美元/单，不是按下单件数计算。</div></details>
+<details class="qa" open><summary>怎么我的品还不上架，能不能帮我催下？</summary><div class="a">本地仓流程：卖家上款 → 计算价格（1-2 个工作日）→ 平台图审、编辑上架售卖（1-2 个工作日，图审未通过需在「图片更新任务」更新图片）→ 卖家从海外仓发货（不可从国内发货）。正常流程无法加急，请耐心等待；超时效可在对接群联系运营了解具体情况（店铺商品批量无法上架一般是由侵权违规导致）。</div></details>
+<details class="qa" open><summary>我的店铺怎么突然都下架了？</summary><div class="a">自查店铺账户预留金额是否不足（详见<Linked text=“链接”>https://seller.kuajingmaihuo.com/main/course/detail?courseId=2404250001635）。缴纳成功后请耐心等待系统回捞；如保证金充足，请联系招商运营。</div></details>
+<details class="qa" open><summary>我已经发货了，但客户取消订单，系统自动同意退款，还能申诉吗？</summary><div class="a">物流一般无法拦截。若客户已签收，可在退款成功后的 8-10 个工作日左右，在【订单管理-退货/退款】找到对应订单进行申诉。</div></details>
+</div>
+</section><section class="sec" id="flip">
+<div class="sec-head"><span class="num">05</span><div><h2>一口价 / GCC</h2><p class="desc">一口价政策、海外印花资质、GCC 合规申报</p></div></div>
+<div class="links-grid">
+<a class="linkcard" href="https://bdl.cdnfe.com/upload_bdl/upload/54327d7f-a93c-454d-94d9-6bc17b9c78a8.xlsx" target="_blank" rel="noopener"><span>📄 一口价表格下载</span><i>→</i></a>
+<a class="linkcard" href="https://bdl.cdnfe.com/upload_bdl/business/2621cc22-dd47-4212-b8a6-f78007b8c86e.xlsx" target="_blank" rel="noopener"><span>📄 海外印花资质表格模板</span><i>→</i></a>
+<a class="linkcard" href="https://bdl.cdnfe.com/upload_bdl/chunkeqi/be51611c-acf1-4d74-930b-d1145afad2e7.pdf" target="_blank" rel="noopener"><span>📄 GCC 讲解文档</span><i>→</i></a>
+</div>
+<div class="qa-list">
+<details class="qa" open><summary>什么是一口价？</summary><div class="a">一口价政策如下，未包含的商品类目无法申请一口价。需分站点提交资质材料（例：之前提交过美国站，现需新开加拿大站需重新提交）。</div></details>
+<details class="qa" open><summary>一口价发品请注意</summary><div class="a">未按要求填写导致价格异常无法申诉，请反馈运营前自查：<br>a. 【成分】【面料克重】【面料克重1】【袖长】需按申报一口价款式填写；<br>b. 系统识别的一口价属性字段为非必填项，容易忽略，请按图例如实填写；<br>c. 水洗材质商品除属性完善外，还需在标题体现【水洗】或【washed】；<br>d. 一口价材料审核通过后至系统生效还需 3-4 天，请耐心等待。</div></details>
+<details class="qa" open><summary>一口价表格下载</summary><div class="a">打开下载查看：一口价表格（xlsx）</div></details>
+<details class="qa" open><summary>新一口价政策 · 海外印花工厂资质</summary><div class="a">新政策需要核查海外印花工厂资质，无发品数量要求。<br>【海外印花】资质要求：<br>① 提供海外印花工厂照片或视频（用水印相机，需带时间地点水印）；<br>② 若底板海外采购，材料 6 选 1 提供即可（详见表格模板）；<br>③ 若底板国内采购，材料 2 选 1 提供即可（详见表格模板）；<br>④ 资质提报方式：线下表格 —— 一个主体下的所有商家一套资料一个表格，N 个主体提供 N 个表格；表格和压缩包均以主体 ID 命名。</div></details>
+<details class="qa" open><summary>GCC 相关 · 重点提炼</summary><div class="a">时间节点：1 月 31 日。<br>需要做什么？<br>（1）完善属性信息：a. 商品列表-全部任务待办-商品属性-填写面料纹理和面料克重；b. 卖家中心→商品实拍图界面→上传商品主体实拍图（不是所有商品都有入口，需参考完善属性后的系统校验结果）；上传图片新增成分洗水唛实拍图。<br>（2）隶属六大成分（腈纶、变性腈纶、尼龙、烯烃、聚酯、羊毛），且含量之和为 100%，可豁免；光面且克重大于 88.18g/平方，26 股丝，可豁免。<br>（3）如果成分含有 PU 则不可豁免，尽快办理正规报告上传。</div></details>
+</div>
+</section><section class="sec" id="sell">
+<div class="sec-head"><span class="num">06</span><div><h2>销售与履约</h2><p class="desc">售罄、库存、活动、拒付、履约风控、物流等</p></div></div>
+<div class="card-note">
+<a class="linkcard" href="https://seller.kuajingmaihuo.com/main/course/detail?courseId=2411160000013" target="_blank" rel="noopener"><span>本地仓虚假发货申诉材料</span><i>→</i></a>
+<a class="linkcard" href="https://seller.kuajingmaihuo.com/main/course/detail?courseId=2408180000812" target="_blank" rel="noopener"><span>本地仓履约风控常见问题</span><i>→</i></a>
+<a class="linkcard" href="https://seller.kuajingmaihuo.com/main/course/detail?courseId=2404280000036" target="_blank" rel="noopener"><span>本地仓拒付处理指引</span><i>→</i></a>
+</div>
+<div class="qa-list">
+<details class="qa" open><summary>能不能拉黑某客户 / 设置限购？</summary><div class="a">商家无法拉黑或设置限购，平台的风控会检测客户行为。</div></details>
+<details class="qa" open><summary>售罄</summary><div class="a">① 售罄指 sku 维度（尺码维度）出现断码缺货等情况，而非整个 skc 或 spu。② 售罄分计算：近 30 天所有 sku，新增售罄率 & 新增售罄影响 GMV，两者同时 &lt;60 分，无法提报活动。其中平常款/滞销款，库存不清 0 的下架不算售罄。注意：售罄健康分计算周期是过去 30 天汇总，因此补货后健康分不会立即上升，需持续保持不售罄，分数将逐步提高。③ 售罄影响 GMV 健康分数表现极差时，店铺流量可能无法转化，单量会出现断崖式下跌（实操中的商家反馈）。</div></details>
+<details class="qa" open><summary>备用计划 / 库存维护</summary><div class="a">推荐使用平台备货计划功能，及时维护库存信息。备货管理、商品列表和第三方 ERP 都支持库存维护；备货管理独特优势：提供独有 C 端数据、商品加购和收藏数据，从流量角度提供备货参考；提供独有销量预测（已纳入活动、广告、C 端流量和大盘趋势）。</div></details>
+<details class="qa" open><summary>库存回退设置：商品库存改为 0 了还是在出单？</summary><div class="a">入口：卖家中心-库存管理-库存回退设置。当库存回退设置开关关闭后，所有订单取消将不再回滚库存。</div></details>
+<details class="qa" open><summary>我的店铺怎么无法上新了？</summary><div class="a">可能涉及店铺违规。优先自查路径：卖家中心-违规申诉-申诉列表-违规处理对象类型-选择店铺。</div></details>
+<details class="qa" open><summary>活动相关</summary><div class="a">本地仓目前需要商家自主提报活动（主流量灌溉、大曝光加持）。注意事项：① 及时添加并设置准确库存，活动报名后库存锁定无法调整；② 每日定时点击链接查询店铺可参与活动的商品，以免断流；③ 活动有时间限制，优先提报可生效场次，并在截止前及时续报；④ 可参考长期活动【官方大促、限时秒杀、特价清仓】叠加大促进阶活动。活动折扣只显示最低价，流量加权可叠加（例：提报 85 折活动可直接提报 9 折活动，无需再调价）。</div></details>
+<details class="qa" open><summary>拒付处理指引</summary><div class="a">拒付是买家向支付机构发起的。如果未发货可以同意拒付，不会损失货款；如果已发货则拒绝拒付，需要申诉成功才可拒付。</div></details>
+<details class="qa" open><summary>轨迹错误/缺失导致包裹无法签收</summary><div class="a">背景：当前订单结算依据是轨迹，轨迹错误/缺失导致商家无法结算（如 CEVA 派送、澳洲 DF 无轨迹、亚马逊代拍无轨迹、物流商不支持选择）。现已支持发起申诉，通过后转签收。申诉入口：订单列表-已发货栏-包裹签收申诉。</div></details>
+<details class="qa" open><summary>消费者地址有误，无法发出</summary><div class="a">如果是物流商无法下单，多换几家物流商下单试试；订单列表点小眼睛-【疑似有误】，给消费者发卡片+邮件，邀请客户确认地址。</div></details>
+<details class="qa" open><summary>为什么物流商官网物流轨迹我的店铺后台没有？</summary><div class="a">可能是店铺后台和物流商官网存在时差，官网一般为当地时间，本地仓店铺后台默认为北京时间，可在订单页面上方更改时区。</div></details>
+<details class="qa" open><summary>使用平台在线下单后需要改为自发货</summary><div class="a">订单详情-更换物流-变更为自主导入运单发货。</div></details>
+<details class="qa" open><summary>本地仓商品 0 库存发品</summary><div class="a">目前本地仓已支持商家在发品环节库存为 0 创建商品。修改库存：商家可在【商品列表-操作栏】点击【修改库存】进行修改，请到货后及时修改以免影响上架售卖。</div></details>
+</div>
+</section><section class="sec" id="eu">
+<div class="sec-head"><span class="num">07</span><div><h2>欧洲站信息汇总</h2><p class="desc">欧盟发品、VAT、经营攻略、面单支持范围</p></div></div>
+<p class="note">💡 举报困惑：商家无法举报消费者？平台风控会检测客户行为。</p>
+<div class="card-note">
+<a class="linkcard" href="https://seller.kuajingmaihuo.com/main/course/detail?courseId=2407140000819" target="_blank" rel="noopener"><span>欧洲 VAT 简介和注册流程</span><i>→</i></a>
+<a class="linkcard" href="https://seller.kuajingmaihuo.com/main/course/detail?courseId=2407140000033" target="_blank" rel="noopener"><span>欧洲本地仓经营攻略</span><i>→</i></a>
+<a class="linkcard" href="https://seller.kuajingmaihuo.com/main/course/detail?courseId=2501220000018" target="_blank" rel="noopener"><span>泛欧物流价格 · 卖家课堂</span><i>→</i></a>
+<a class="linkcard" href="https://bdl.cdnfe.com/upload_bdl/business/01f82c30-acaa-44c3-a616-84f52ee8858a.pdf" target="_blank" rel="noopener"><span>本地仓欧盟发品讲解 PDF</span><i>→</i></a>
+<div class="lcard"><h4>批量报名活动功能 · 功能说明</h4><p>半托活动支持导入 Excel 批量报名活动，计划两周内全量，未灰度的店铺请耐心等待。操作入口按页面指引操作，导入前多检查几遍表格。<br><b>重要提示：</b>上传时需确保表格数据准确无误。报名信息提交后系统自动处理且无法中断或撤销，请务必仔细检查确认后再提交，以免因数据错误导致损失。平台对因数据不准确或操作失误造成的后果不承担责任。</p></div>
+<div class="lcard"><h4>欧区税务交易数据开白</h4><p>为方便报税，半托增值税交易数据下载入口今日起支持商家通过招商申请白名单权限，审核通过后支持下载月度汇总数据。请将以下信息发送买手：MallID、店铺名称、申请原因（申报 VAT）。</p></div>
+</div>
+<div class="qa-list">
+<details class="qa" open><summary>本地仓欧盟发品讲解</summary><div class="a">EU 发品讲解 PDF 见下方「文件下载」板块。</div></details>
+<details class="qa" open><summary>欧洲 VAT 简介和注册流程</summary><div class="a">卖家中心课程：VAT 简介和注册流程。</div></details>
+<details class="qa" open><summary>欧洲本地仓经营攻略</summary><div class="a">卖家中心课程：欧洲本地仓经营攻略。</div></details>
+<details class="qa" open><summary>一品发欧盟解读</summary><div class="a">发布出来的品「能」卖全欧盟，不代表这个商品每分每秒都要在全部 27 个站点售卖。商家可以通过库存进行控制：库存挂在发货仓上，通过库存-发货仓-站点的关系，控制是否在哪个站可以售卖出单。</div></details>
+<details class="qa" open><summary>半托&amp;本本欧洲平台面单支持范围（0126 更新）</summary><div class="a"><b>亮点：</b><br>（1）UPS 法国发法国/德国/意大利上线：法国→法国 9kg 以内 5.78 欧起；法国→德国 7kg 以内 7.64 欧起；法国→意大利 1kg 以内 5.71 欧起。<br>（2）UPS 意大利发荷兰上线：意大利→荷兰 2kg 以内 9.0 欧起。<br><b>已接入物流产品 list：</b><br>Evri：英发英；Chronopost：法发法；UPS：德国发德国/西班牙/法国/意大利/匈牙利/比利时/葡萄牙/荷兰/捷克/波兰；UPS：意大利发意大利/德国/法国/西班牙/比利时/捷克/波兰/瑞典/葡萄牙/匈牙利/荷兰；UPS：法国发法国/德国/意大利；UPS：西班牙发西班牙；DHL：波兰发波兰；INPOST：波兰发波兰；CTT：西班牙发西班牙。<br><b>商家后台操作路径：</b>订单管理-订单列表-待发货订单。<br>泛欧物流价格可参考卖家课堂线上链接。</div></details>
+<details class="qa" open><summary>在线下单支持包裹索赔</summary><div class="a">符合索赔条件的平台会自动发起索赔，无需商家申请。申诉入口：配送管理-物流商索赔。本地仓入口（美国在全球区索赔）。</div></details>
+<details class="qa" open><summary>欧盟 GPSR 新法规欧代信息及标签要求</summary><div class="a">12 月 13 日起，欧盟站除豁免的所有商品，checktype 未合规的商品将会下站点，新发布商品进行上站点拦截。此法规对半托/本本商品都生效，商家需按法规要求申报：制造商/欧盟负责人/商品识别码/商品警示信息。</div></details>
+</div>
+</section><section class="sec" id="ads">
+<div class="sec-head"><span class="num">08</span><div><h2>广告功能相关</h2><p class="desc">美国站广告操作流程</p></div></div>
+<div class="links-grid">
+<a class="linkcard" href="https://bdl.cdnfe.com/upload_bdl/business/8307b424-6cfc-42ec-bf31-a2f60a40a42a.pdf" target="_blank" rel="noopener"><span>📄 广告常见问题查看</span><i>→</i></a>
+<a class="linkcard" href="https://bdl.cdnfe.com/upload_bdl/business/87642f66-30b4-4614-a400-6276660703b1.pdf" target="_blank" rel="noopener"><span>📄 美发加商家操作 SOP</span><i>→</i></a>
+</div>
+<div class="qa-list">
+<details class="qa" open><summary>美国站广告功能（已全量）操作流程</summary><div class="a">① 登陆广告后台；② 主账号登陆，签署协议；③ 创建广告；④ 选择商品；⑤ 设置 ROAS 出价（表示愿意花 1 美元/1 人民币广告花费在 30 天内获得 XX 美元/XX 元申报价销售额，「目标广告投资回报率」设置越低，拿量能力越强）；⑥ 可以设置预算，也可不设置；⑦ 创建成功；⑧ 去财务管理-广告服务费准备金设置（根据设置情况对相应货款账户金额进行限制，用于支付广告服务费，可自行修改或关闭；广告服务费准备金不是消耗上限）；⑨ 随后广告即会开投。</div></details>
+</div>
+</section><section class="sec" id="risk">
+<div class="sec-head"><span class="num">09</span><div><h2>风控与账号</h2><p class="desc">保证金、拉黑/白名单、高违规、爆款分、拒付、订单取消等</p></div></div>
+<div class="qa-list">
+<details class="qa" open><summary>35. 订单无法完结</summary><div class="a">请耐心等待订单完结。签收正常的订单，可在订单列表页发起【包表签收申诉】，申诉通过后流转到已签收；签收异常的订单，可在退货/退款页发起【签收异常包表退款】，退款成功后流转到已取消。</div></details>
+<details class="qa" open><summary>无法签收① — 希望手动签收（包裹实际签收轨迹有问题）</summary><div class="a">背景：当前订单结算依据是轨迹，轨迹错误/缺失导致商家无法结算（如签收后多了 1 条轨迹、物流商不支持选择）。支持发起申诉，通过后可转签收。申诉入口：订单列表-已发货栏-包裹签收申诉。<br><b>申诉要求：</b>1. 必须填写【包裹号】！不能填写订单号/子订单号/运单号；2. 必须【已发货且长期未签收】的包裹才能申诉，不能是【待自提】；3. 需提供包裹已签收的说明及图片举证（含运单号、签收轨迹的官网截图、发货证明等）；4. 每个包裹只能申诉 1 次，请务必上传完整证据。</div></details>
+<details class="qa" open><summary>无法签收② — 希望手动手动关闭/完结异常订单（包裹实际丢件）</summary><div class="a">存在部分订单包裹实际丢件但一直未关闭，影响商家结算/退店。现支持主动完结订单。使用条件：发货时间超过 35 天，且一直未签收/未退款的包裹。入口：海外卖家中心-退货/退款-签收异常包裹退款-输入订单号。</div></details>
+<details class="qa" open><summary>36. 保证金风控</summary><div class="a">出现以下情形会触发保证金缴纳风控：<br>（1）美区或欧区卖家中心履约违规订单数量超过 3 单；<br>（2）美区或欧区卖家中心买家支付订单数量超过 100 单；<br>（3）美区已产生订单成交金额累计超过 1500 美元，或欧区累计超过 1500 欧元；<br>（4）其他 Temu 认为应当限制店铺功能、权限的情形。</div></details>
+<details class="qa" open><summary>37. 店铺被拉黑问题（发品数）</summary><div class="a">1. 最近 30 天，发品核价通过率或核价通过在售率 ≤5%（以更新时间数据为准）。2. 被拉黑后：每天正常发品，提升核价通过率或在售率，每周数据更新会自动解除。</div></details>
+<details class="qa" open><summary>店铺加白后被剔除白名单问题</summary><div class="a">1. 加白几天后，店铺发品量突然回到 400，回到每日发品限制为 400。2. 最近 30 天发品核价通过率 ≤10% 或核价通过在售率 ≤5%，会被剔除。3. 间隔一周后重新提报，一定提示卖家保证发品质量，避免连续剔除。</div></details>
+<details class="qa" open><summary>黑名单和加白名单优先级</summary><div class="a">黑名单优先级高于白名单。拉黑后，加白名单不生效，会以黑名单限制为准。</div></details>
+<details class="qa" open><summary>38. 高违规浓度店铺处罚是什么？</summary><div class="a">指店铺内商品违规浓度高或违规数量多，是店铺内所有商品违规的集合。原因包括重复铺货、ip、描述不符、色情、宗教、政治等。关于千品店的处罚口径有更新：店铺在售数量限制 & 每日发品商品数量限制处罚时间由永久变更为 30 天观察期。</div></details>
+<details class="qa" open><summary>39. 如何提升爆款表现分</summary><div class="a">通过发布 3 类爆款机会商品/报名活动/投放商品广告提升店铺爆旺款率。<br>- 发布 3 类爆款机会商品：同款 sku 近 30 天有订单即可算作爆旺款，无订单不纳入爆款率计算。<br>注：补货后售罄健康分不会立即上升，需持续保持不售罄，售罄分将逐步提高。</div></details>
+<details class="qa" open><summary>40. 拒付如何处理？</summary><div class="a">1. 路径：订单管理-拒付处理。2. 所有拒付单请看卖家课堂举证参考。3. 拒付理由：买家在发起争议时选择，常见有——未授权或欺诈交易（支付未经本人授权）、未收到货物、商品与描述不符/有缺陷损坏。</div></details>
+<details class="qa" open><summary>41. 主体多开店铺开白（ip 授权）</summary><div class="a">自查店铺违规处理页面，有无限制主体开店，没有的再申请 ip 授权多开店铺。需要授权的剩余时间大于 3 个月，即授权到期时间-提交开白时间 ≥90 天，所以需先延长授权期。</div></details>
+<details class="qa" open><summary>42. 商家后续如何登录自己的前端店铺？</summary><div class="a">通过店铺前端商城链接打开（将数字替换成自己的店铺 ID），翻墙后可进入，之前的后台店铺访问功能已关闭。</div></details>
+<details class="qa" open><summary>43. 商家侧已支持商家自主下活动</summary><div class="a">入口：卖家反馈-营销活动/申请退出活动。申请后发买手店铺 ID 审批。</div></details>
+<details class="qa" open><summary>44. 订单被系统取消？</summary><div class="a">风控原因砍单，引导商家申诉：和其他售后申诉一样，在美区/欧区卖家后台-订单管理-退货退款-售后详情页打开申诉入口。注：不是退款完成后马上打开入口，需等结算流程 2-8 天（通常是 8 天），暂时没有入口建议耐心等待。</div></details>
+<details class="qa" open><summary>45. 缺货风控怎么解决？</summary><div class="a">店铺需解除限制（后台有申诉入口的以后台提示为准，4 个条件都需满足）：1. 充值保证金（香港主体跟本本店铺无充值路径）；2. 店铺目前待发货量全部处理完毕；3. 确认货已到海外可正常履约（提供能证明海外仓有足够库存的截图）；4. 确认最新履约协议已签署。</div></details>
+<details class="qa" open><summary>46. 海外节假日是否考核履约时效？</summary><div class="a">周末及法定节假日不计入时效，遇节假日轨迹可能更新不及时，可让商家再耐心等待。</div></details>
+<details class="qa" open><summary>47. 为什么卖家中心后台处理不了部分国家的事宜？</summary><div class="a">美国站单独处理，可用直达链接；尤其是订单发货、售后单处理；美本和欧本等本本店铺无变化。</div></details>
+<details class="qa" open><summary>48. 部分信息解析异常</summary><div class="a">系统解析错误或失误，关闭浏览器或三方软件插件，重新操作。</div></details>
+</div>
+</section><section class="sec" id="ops">
+<div class="sec-head"><span class="num">10</span><div><h2>如何按区域进入（4 个后台）</h2><p class="desc">根据业务区域选择对应后台</p></div></div>
+<div class="card-note">
+<a class="linkcard" href="https://seller.kuajingmaihuo.com/main/rule-center" target="_blank" rel="noopener"><span>中区（处理发品和库存、活动报名等）</span><i>→</i></a>
+<a class="linkcard" href="https://agentseller-us.temu.com" target="_blank" rel="noopener"><span>美国（美国站，处理订单和售后等）</span><i>→</i></a>
+<a class="linkcard" href="https://agentseller.temu.com/" target="_blank" rel="noopener"><span>全球（之前的美区除美国外的站点）</span><i>→</i></a>
+<a class="linkcard" href="https://agentseller-eu.temu.com/" target="_blank" rel="noopener"><span>欧区（站点不变，处理订单和售后等）</span><i>→</i></a>
+</div>
+<div class="qa-list">
+<details class="qa" open><summary>本地仓入口（美国在全球区索赔）</summary><div class="a">配送管理-物流商索赔（本地仓入口）。</div></details>
+</div>
+</section>
+<footer style="max-width:1080px;margin:60px auto 40px;padding:0 24px;text-align:center;color:var(--muted);font-size:12px;border-top:1px solid var(--border);padding-top:24px;">
+  本地仓常见问题 · 版本 2026/9/6 更新 · 持续维护中
+</footer>
+
+</body>
+</html>
+
+<!-- CGL_ORIGIN_MARK: 本站所有内容版权归原作者所有, 禁止拷贝复制。 -->
