@@ -1,0 +1,94 @@
+/*
+ * 成桂零对接服务站
+ * (c) 2026 成桂零对接服务站 保留所有权利
+ * 本样式已受版权保护, 禁止盗用。
+ */
+/* ============================================================
+   成桂零 · 互动增强样式（P0）—— 纯增量，不覆盖现有令牌
+   依赖 style.css 的设计令牌（--accent、--surface、--radius-md 等）
+   提供：进度条、搜索联想、类目图表、收藏星标、焦点反馈
+   ============================================================ */
+
+/* ---------- 阅读进度条（B1） ---------- */
+.cgl-progress{
+  position:fixed; top:0; left:0; right:0; height:3px;
+  z-index:200; pointer-events:none; background:transparent;
+}
+.cgl-progress-bar{
+  position:absolute; top:0; left:0; height:100%; width:100%;
+  display:block;
+  background:var(--accent, #0071e3);
+  transform:scaleX(0); transform-origin:0 50%;
+  transition:transform .08s linear;
+  box-shadow:0 0 6px color-mix(in srgb, var(--accent,#0071e3) 60%, transparent);
+}
+
+/* ---------- 搜索联想（D1） ---------- */
+.cgl-sug{
+  position:absolute; z-index:120;
+  left:0; right:0; top:calc(100% + 6px);
+  background:var(--surface,#fff);
+  border:1px solid var(--line,rgba(0,0,0,.08));
+  border-radius:var(--radius-md,14px);
+  box-shadow:var(--shadow-lg,0 8px 30px rgba(0,0,0,.10));
+  overflow:hidden;
+  padding:6px;
+  max-height:260px; overflow-y:auto;
+}
+.cgl-sug-item{
+  padding:9px 12px; border-radius:var(--radius-sm,9px);
+  font-size:14px; line-height:1.5; color:var(--text,#1d1d1f);
+  cursor:pointer; transition:background .15s ease;
+}
+.cgl-sug-item:hover,.cgl-sug-item:focus{ background:var(--surface-hover,rgba(0,113,227,.08)); }
+.cgl-sug-item b{ color:var(--accent,#0071e3); font-weight:600; }
+
+/* ---------- 类目分布图表（D4） ---------- */
+.cgl-chart{
+  display:grid; gap:14px;
+}
+.cgl-chart-item{
+  cursor:pointer; outline:none; border-radius:var(--radius-sm,10px);
+  padding:6px 4px; transition:background .15s ease, transform .1s ease;
+}
+.cgl-chart-item:hover,.cgl-chart-item:focus-visible{
+  background:var(--surface-hover,rgba(0,113,227,.06));
+}
+.cgl-chart-item:active{ transform:scale(.995); }
+.cgl-chart-top{
+  display:flex; align-items:baseline; justify-content:space-between;
+  margin-bottom:7px;
+}
+.cgl-chart-label{
+  font-size:14px; font-weight:600; color:var(--text,#1d1d1f);
+}
+.cgl-chart-num{ font-size:13px; color:var(--text-muted,#6e6e73); }
+.cgl-chart-num b{ color:var(--accent,#0071e3); font-weight:700; }
+.cgl-chart-track{
+  height:9px; background:var(--line,rgba(0,0,0,.06));
+  border-radius:99px; overflow:hidden;
+}
+.cgl-chart-fill{
+  display:block; height:100%;
+  background:var(--grad, linear-gradient(90deg,#0a84ff,#3b6ff0));
+  border-radius:99px;
+  transition:width .5s cubic-bezier(.22,.61,.36,1);
+}
+
+/* ---------- 搜索框容器：联想下拉定位参照 ---------- */
+.searchbar .inwrap{ position:relative; }
+.searchbar .inwrap input{ width:100%; }
+
+/* ---------- 统一键盘焦点可见（A1） ---------- */
+/* 用 !important 覆盖浏览器默认焦点样式，确保快捷键/键盘导航可见性一致 */
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
+  outline:2px solid var(--accent,#0071e3);
+  outline-offset:2px; border-radius:var(--radius-sm,9px);
+}
+
+/* ---------- 动效降级 ---------- */
+@media (prefers-reduced-motion: reduce){
+  .cgl-progress-bar{ transition:none; }
+  .cgl-chart-fill{ transition:none; }
+  .cgl-sug-item{ transition:none; }
+}
